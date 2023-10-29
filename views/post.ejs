@@ -1,0 +1,16 @@
+<%- include("partials/header"); -%>
+
+<h1><%= title %></h1>
+<p>By <%= author %> on <%= timestamp.toLocaleString() %></p>
+<p><%= content %></p>
+
+<h2>Comments:</h2>
+<% comments.forEach(function(comment){ %>
+  <div class="comment">
+    <h4><%= comment.author %></h4>
+    <p><%= comment.content %></p>
+    <p><%= comment.timestamp.toLocaleString() %></p>
+  </div>
+<% }) %>
+
+<%- include("partials/footer"); -%>

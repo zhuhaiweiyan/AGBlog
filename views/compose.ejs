@@ -1,0 +1,22 @@
+<%- include("partials/header"); -%>
+
+<h1>Compose</h1>
+
+<% if (isAuthenticated) { %>
+  <form class="" action="/compose" method="post">
+    <div class="form-group">
+      <label for="postTitle">Title</label>
+      <input class="form-control" type="text" name="postTitle" id="postTitle" required>
+      <label for="postAuthor">Author</label>
+      <input class="form-control" type="text" name="postAuthor" id="postAuthor" required>
+      <label for="postBody">Post</label>
+      <textarea class="form-control" name="postBody" id="postBody" rows="5" cols="30" required></textarea>
+    </div>
+    <button class="btn btn-primary" type="submit">Publish</button>
+  </form>
+<% } else { %>
+  <p>You must be logged in to compose a post.</p>
+  <a href="/login" class="btn btn-primary">Login</a>
+<% } %>
+
+<%- include("partials/footer"); -%>
